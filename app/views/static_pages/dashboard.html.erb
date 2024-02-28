@@ -1,0 +1,213 @@
+<div class="box">
+    <h3 class="subtitle is-5 has-text-centered">All Games</h3>
+    <div class="block">
+        <div class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Games</p>
+                    <p class="title"><%= @all_data[:total_games]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Won</p>
+                    <p class="title"><%= @all_data[:total_won]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Lost</p>
+                    <p class="title"><%= @all_data[:total_lost]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Drawn</p>
+                    <p class="title"><%= @all_data[:total_drawn]%></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="level">
+            <% @all_data.each do |stat, value| %>
+                <% if value.to_s.include?(".") %>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading"><%= "#{stat.to_s.split("_")[1..2].join(" ").capitalize}" %></p>
+                            <% if value.round(2) >= 75.00 %>
+                                <p class="title has-text-danger"><%= "#{value.round(2)}%" %></p>
+                            <% elsif value.round(2) >= 50.00 %>
+                                <p class="title has-text-warning"><%= "#{value.round(2)}%" %></p>
+                            <% elsif value.round(2) >= 25.00 %>
+                                <p class="title has-text-info"><%= "#{value.round(2)}%" %></p>
+                            <% else %>
+                                <p class="title has-text-success"><%= "#{value.round(2)}%" %></p>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <h3 class="subtitle is-5 has-text-centered">Games as White</h3>
+    <div class="block">
+        <div class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Games</p>
+                    <p class="title"><%= @white_data[:total_games]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Won</p>
+                    <p class="title"><%= @white_data[:total_won]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Lost</p>
+                    <p class="title"><%= @white_data[:total_lost]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Drawn</p>
+                    <p class="title"><%= @white_data[:total_drawn]%></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="level">
+            <% @white_data.each do |stat, value| %>
+                <% if value.to_s.include?(".") %>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading"><%= "#{stat.to_s.split("_")[1..2].join(" ").capitalize}" %></p>
+                            <% if value.round(2) >= 75.00 %>
+                                <p class="title has-text-danger"><%= "#{value.round(2)}%" %></p>
+                            <% elsif value.round(2) >= 50.00 %>
+                                <p class="title has-text-warning"><%= "#{value.round(2)}%" %></p>
+                            <% elsif value.round(2) >= 25.00 %>
+                                <p class="title has-text-info"><%= "#{value.round(2)}%" %></p>
+                            <% else %>
+                                <p class="title has-text-success"><%= "#{value.round(2)}%" %></p>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="box">
+    <h3 class="subtitle is-5 has-text-centered">Games as Black</h3>
+    <div class="block">
+        <div class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Games</p>
+                    <p class="title"><%= @black_data[:total_games]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Won</p>
+                    <p class="title"><%= @black_data[:total_won]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Lost</p>
+                    <p class="title"><%= @black_data[:total_lost]%></p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Drawn</p>
+                    <p class="title"><%= @black_data[:total_drawn]%></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="level">
+            <% @black_data.each do |stat, value| %>
+                <% if value.to_s.include?(".") %>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading"><%= "#{stat.to_s.split("_")[1..2].join(" ").capitalize}" %></p>
+                            <% if value.round(2) >= 75.00 %>
+                                <p class="title has-text-danger"><%= "#{value.round(2)}%" %></p>
+                            <% elsif value.round(2) >= 50.00 %>
+                                <p class="title has-text-warning"><%= "#{value.round(2)}%" %></p>
+                            <% elsif value.round(2) >= 25.00 %>
+                                <p class="title has-text-info"><%= "#{value.round(2)}%" %></p>
+                            <% else %>
+                                <p class="title has-text-success"><%= "#{value.round(2)}%" %></p>
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="box section is-small">
+    <h3 class="has-text-centered">Games as White</h3>
+    <div class="columns">
+        <div class="column is-half has-text-centered">
+            <%= "Total Games: #{@white_data[:total_games]}"%><br>
+            <%= "Total Won: #{@white_data[:total_won]}"%><br>
+            <%= "Total Lost: #{@white_data[:total_lost]}"%><br>
+            <%= "Total Drawn: #{@white_data[:total_drawn]}"%>
+        </div>
+
+        <div class="column is-half has-text-centered">
+            <% @white_data.each do |stat, value| %>
+                <% if value.to_s.include?(".") %>
+                    <%= "#{stat.to_s.split("_")[1..2].join(" ").capitalize}: #{value.round(2)}%"%> <br>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="box section is-small">
+    <h3 class="has-text-centered">Games as Black</h3>
+    <div class="columns">
+        <div class="column is-half has-text-centered">
+            <%= "Total Games: #{@black_data[:total_games]}"%><br>
+            <%= "Total Won: #{@black_data[:total_won]}"%><br>
+            <%= "Total Lost: #{@black_data[:total_lost]}"%><br>
+            <%= "Total Drawn: #{@black_data[:total_drawn]}"%>
+        </div>
+
+        <div class="column is-half has-text-centered">
+            <% @black_data.each do |stat, value| %>
+                <% if value.to_s.include?(".") %>
+                    <%= "#{stat.to_s.split("_")[1..2].join(" ").capitalize}: #{value.round(2)}%"%> <br>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>-->

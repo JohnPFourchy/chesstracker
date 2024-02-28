@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  date_played: 2024-02-19
+  time_control: MyString
+  color: MyString
+  outcome: MyString
+  time_management: false
+  tactic: false
+  opening_position: false
+  middlegame_position: false
+  endgame_position: false
+  blunder: false
+  give_up: false
+  notes: MyString
+  user: one
+
+two:
+  url: MyString
+  date_played: 2024-02-19
+  time_control: MyString
+  color: MyString
+  outcome: MyString
+  time_management: false
+  tactic: false
+  opening_position: false
+  middlegame_position: false
+  endgame_position: false
+  blunder: false
+  give_up: false
+  notes: MyString
+  user: two

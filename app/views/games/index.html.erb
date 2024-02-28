@@ -1,0 +1,47 @@
+<br>
+<div class="columns is-centered">
+    <table class="table has-text-centered">
+        <thead>
+            <tr>
+                <th>Date Played</th>
+                <th>Time Control</th>
+                <th>Outcome</th>
+                <th>Piece Color</th>
+                <th>Additional Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @games.order(date_played: :desc).each do |game| %>
+                <% if game.outcome == "Won" %>
+                    <tr class="has-background-success has-text-white">
+                        <td><%= game.date_played.strftime("%m/%d/%Y") %></td>
+                        <td><%= game.time_control %></td>
+                        <td><%= game.outcome %></td>
+                        <td><%= game.color %></td>
+                        <td><%= link_to "Show More", game %></td>
+                    </tr>
+                <% elsif game.outcome == "Lost"%>
+                    <tr class="has-background-danger has-text-white">
+                        <td><%= game.date_played.strftime("%m/%d/%Y") %></td>
+                        <td><%= game.time_control %></td>
+                        <td><%= game.outcome %></td>
+                        <td><%= game.color %></td>
+                        <td><%= link_to "Show More", game %></td>
+                    </tr>
+                <% else %>
+                    <tr class="has-background-grey-light has-text-white">
+                        <td><%= game.date_played.strftime("%m/%d/%Y") %></td>
+                        <td><%= game.time_control %></td>
+                        <td><%= game.outcome %></td>
+                        <td><%= game.color %></td>
+                        <td><%= link_to "Show More", game %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+<div class="columns is-centered mt-auto">
+    <%= link_to "Add Game", new_game_path, class: "button" %>
+</div>

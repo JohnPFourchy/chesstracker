@@ -1,0 +1,73 @@
+
+<div class="columns is-centered">
+    <div class="column is-half">
+
+        <div class="block">
+            <h3 class="subtitle is-5 has-text-centered">Game Information</h3>
+            <div class="level">
+
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">URL</p>
+                        <p><%=link_to "Game Link", @game.url, target: :_blank %></p>
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Time Control</p>
+                        <p><%= @game.time_control %></p>
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Outcome</p>
+                        <p><%= @game.outcome %></p>
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Color</p>
+                        <p><%= @game.color %></p>
+                    </div>
+                </div>
+
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Date</p>
+                        <p><%= @game.date_played.strftime("%m/%d/%Y") %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <h3 class="subtitle is-5 has-text-centered">Deciding Factors</h3>
+            <ul class="ml-6">
+                <% factors = @game.attributes.select { |k,v| v == true } %>
+                <% factors.each do |factor, value| %>
+                    <li><%= factor.split("_").join(" ").capitalize %></li>
+                <% end %>
+            </ul>
+        </div>
+
+        <div class="block">
+            <h3 class="subtitle is-5 has-text-centered">Notes</h3>
+            <div class="ml-6">
+                <%= @game.notes %>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="level">
+                <div class="level-item">
+                    <div class="mr-5"><%= link_to "Edit", edit_game_path(@game), method: :get %></div>
+                    <div class="ml-5"><%= link_to "Delete", game_path(@game), data: {turbo_method: :delete} %></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

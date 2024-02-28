@@ -1,0 +1,109 @@
+
+<%= form_with model: game do |form| %>
+  <!-- Game URL -->
+  <div class="field">
+    <%= form.label :url, class: "label" %>
+    <%= form.text_field :url, class: "control input", placeholder: "Ex: chess.com/game/live/... " %>
+  </div>
+
+  <!-- Date Selector -->
+  <div class="field">
+    <%= form.label :date_played, class: "label" %>
+    <div class="control">
+      <div class="select mr-1">
+        <%= form.date_select :date_played, order: [:day, :month, :year], date_separator: '</div><div class="select mr-1">'%>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time Control Select Box -->
+  <div class="field">
+    <%= form.label :time_control, class: "label" %>
+    <div class="control">
+      <div class="select">
+        <%= form.select :time_control, ["Rapid", "Blitz", "Bullet", "Classical"]%>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Select Box -->
+  <div class="field">
+    <%= form.label :color, class: "label" %>
+    <div class="control">
+      <div class="select">
+        <%= form.select :color, ["White", "Black"] %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outcome Select Box -->
+  <div class="field">
+    <%= form.label :outcome, class: "label"%>
+    <div class="control">
+      <div class="select">
+        <%= form.select :outcome, ["Won", "Lost", "Draw"] %>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h4 class="subtitle is-6 has-text-weight-medium">Deciding Factors for Losses</h4>
+
+  <!-- Time Management Check Box -->
+  <div>
+    <%= form.check_box :time_management, class: "checkbox"%>
+    Time Management
+  </div>
+
+  <!-- Tactic Check Box -->
+  <div>
+    <%= form.check_box :tactic, class: "checkbox"  %>
+    Tactic
+  </div>
+
+  <!-- Opening Position Check Box -->
+  <div>
+    <%= form.check_box :opening_position, class: "checkbox"  %>
+    Opening
+  </div>
+
+  <!-- Middle Position Check Box -->
+  <div>
+    <%= form.check_box :middlegame_position, class: "checkbox"  %>
+    Middlegame
+  </div>
+
+  <!-- Endgame Position Check Box -->
+  <div>
+    <%= form.check_box :endgame_position, class: "checkbox"  %>
+    Endgame
+  </div>
+
+  <!-- Blunder Check Box -->
+  <div>
+    <%= form.check_box :blunder, class: "checkbox"  %>
+    Blunder
+  </div>
+
+  <!-- Give Up Check Box -->
+  <div>
+    <%= form.check_box :give_up, class: "checkbox"  %>
+    Give Up
+  </div>
+
+  <br>
+
+  <!-- Notes Text Area-->
+  <div>
+    <%= form.label :notes, class: "label" %>
+    <%= form.text_area :notes, class: "textarea" %>
+  </div>
+
+  <br>
+
+  <!-- Submit Button -->
+  <div class="has-text-centered">
+    <%= form.submit class: "button is-primary" %>
+  </div>
+
+<% end %>
