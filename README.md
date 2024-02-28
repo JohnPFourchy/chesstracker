@@ -1,7 +1,7 @@
 # Readme
 
 This web app allows users to track their online chess games and visualize statistics.
-By tracking wins and losses along with marking my each game was lost, users can figure out
+By tracking wins and losses along with marking why each game was lost, users can figure out
 what they need to work on to improve their chess game.
 
 # To Use
