@@ -1,24 +1,16 @@
-# README
+# Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This web app allows users to track their online chess games and visualize statistics.
+By tracking wins and losses along with marking my each game was lost, users can figure out
+what they need to work on to improve their chess game.
 
-Things you may want to cover:
+# To Use
 
-* Ruby version
+1. Create an account.
+2. Add completed chess games under the tab My Games
+    - If you lose a game, use the checkboxes to mark why
+4. Under my dashboard you can visualize the data
+5. The percentages are used to display what you need to work on to improve your game
+     - the higher the number, the greater the emphasis
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+** Important Note: The app will become more accurate with each game you log
